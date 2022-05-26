@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Dijital Garaji Hashing Task</string>
+    <string name="get_hash_value">Get The Hashed Email</string>
+    <string name="solve_hash">Solve The Hash Email</string>
 </resources>
