@@ -1,5 +1,6 @@
 package com.tasks.data.webservice
 
+
 import com.info.tasks.domain.model.HashDataRequest
 import com.info.tasks.domain.model.HashDataResponse
 import retrofit2.Response

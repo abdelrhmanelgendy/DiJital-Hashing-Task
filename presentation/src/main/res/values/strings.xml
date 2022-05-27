@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">Dijital Garaji Hashing Task</string>
     <string name="get_hash_value">Get The Hashed Email</string>
+    <string name="open_hash_solving">solve the hash code</string>
     <string name="solve_hash">Solve The Hash Email</string>
-</resources>
+    <string name="slug">abdelrhman-mosad-elgendy-93330</string>
+    <string name="guid">39bee1fb-02da-4c77-9667-e605a037f09e</string>
+    <string name="hash_place_holder">hash value:</string>
+    <string name="email_place_holder">Email:</string>
+ </resources>

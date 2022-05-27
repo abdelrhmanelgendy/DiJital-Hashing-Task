@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
-    tools:context=".view.HashRetrieverActivity">
+    tools:context=".view.HashRetrievingActivity">
 
     <TextView
         android:id="@+id/txtHashResult"
@@ -15,6 +15,17 @@
         android:layout_marginTop="30sp"
         android:padding="4sp"
         android:text=""
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/txtEmailResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30sp"
+        android:padding="4sp"
+        android:text=""
+        android:layout_below="@id/txtHashResult"
         android:textColor="@color/dark_blue"
         android:textSize="16sp" />
 
@@ -47,5 +58,22 @@
         android:paddingStart="4sp"
         android:paddingEnd="4sp"
         android:text="@string/get_hash_value"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/btnOpenHashSolvingActivity"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+
+        android:layout_gravity="center"
+        android:layout_marginEnd="117dp"
+        android:layout_marginBottom="52dp"
+        android:background="@drawable/rounded_button1"
+        android:paddingStart="4sp"
+        android:paddingEnd="4sp"
+        android:text="@string/open_hash_solving"
         android:textColor="@color/white" />
 </RelativeLayout>

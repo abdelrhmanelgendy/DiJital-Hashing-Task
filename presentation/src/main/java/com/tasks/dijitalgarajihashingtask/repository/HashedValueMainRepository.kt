@@ -10,7 +10,7 @@ import javax.inject.Inject
 
 class HashedValueMainRepository @Inject constructor(var dijitalApi: DijitalApi) :
     HashedValueDefaultRepository {
-    override suspend fun getHashedValue(hashRequest: HashDataRequest,mySlug:String): Resource<HashDataResponse> {
+    override suspend fun getHashedValue(hashRequest: HashDataRequest, mySlug:String): Resource<HashDataResponse> {
         try {
             val repositoryResponse = dijitalApi.getTheHashedValue(
                 mySlug,hashRequest
