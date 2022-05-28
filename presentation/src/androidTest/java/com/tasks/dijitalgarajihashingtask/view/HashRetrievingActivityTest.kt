@@ -56,7 +56,7 @@ class HashRetrievingActivityTest
         onView(withId(R.id.btnOpenHashSolvingActivity)).check(matches(not(isDisplayed())))
         onView(withId(R.id.btnGetHashValue)).perform(click())
 
-        onView(isRoot()).perform(waitFor(4000))
+        onView(isRoot()).perform(waitFor(3000))
         onView(withId(R.id.btnOpenHashSolvingActivity)).check(matches(isDisplayed()))
 
 
