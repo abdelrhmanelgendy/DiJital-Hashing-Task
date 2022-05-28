@@ -22,7 +22,6 @@ The project uses Clean architecture as structure pattern consisting of the layer
 * Retorift : type-safe REST client for Android and Java which aims to make it easier to consume RESTful web services
 * coroutines : a concurrency design pattern that you can use on Android to simplify code that executes asynchronously.
 * Dagger Hilt : a dependency injection library for Android that reduces the boilerplate of doing manual dependency injection
-* Glide : an image loading library for Android backed by Kotlin Coroutines
 * MVVM :uisng a Jetpack libraries view model and live data  
 
 # Tests 
