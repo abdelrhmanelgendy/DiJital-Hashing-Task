@@ -15,7 +15,8 @@
         android:usesCleartextTraffic="true">
         <activity
             android:name=".view.HashSolvingActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/hash_solving" />
         <activity
             android:name=".view.HashRetrievingActivity"
             android:exported="true">

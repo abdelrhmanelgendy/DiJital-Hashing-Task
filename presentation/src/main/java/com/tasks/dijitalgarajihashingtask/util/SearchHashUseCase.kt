@@ -3,10 +3,14 @@ package com.emmanuel.dijitalgaraj.quiz
 import java.math.BigInteger
 import java.security.MessageDigest
 
-class SearchHash {
+class SearchHashUseCase {
 
 
-   operator fun invoke( email: String,hashedValue: String): String {
+   operator fun invoke( email: String="",hashedValue: String=""): String? {
+       if (email.isEmpty()||hashedValue.isEmpty())
+       {
+           return null
+       }
         val midCounter = 32
         var currentWordLength = (hashedValue.length) / midCounter
         var currentStartIndex = 0
@@ -113,23 +117,23 @@ class SearchHash {
             ')',
             '('
         )
-        var i = 0
-        var j = 0
+        var start = 0
+        var end = 0
 
-        while (i < allPossibleCharsList.size) {
-            while (j < allPossibleCharsList.size) {
-                val charOne = allPossibleCharsList[i]
-                val charTwo = allPossibleCharsList[j]
+        while (start < allPossibleCharsList.size) {
+            while (end < allPossibleCharsList.size) {
+                val charOne = allPossibleCharsList[start]
+                val charTwo = allPossibleCharsList[end]
                 val word: String =
                     StringBuilder(currentWord).append(charOne).append(charTwo).toString()
                 val wordHash: String = getTheHashFormula(word, email)
                 if (wordHash == currentHash) {
                     return StringBuilder("").append(charOne).append(charTwo).toString()
                 }
-                j++
+                end++
             }
-            j = 0
-            i++
+            end = 0
+            start++
         }
         return "inCorrectInput"
     }
