@@ -7,4 +7,6 @@
     <string name="guid">39bee1fb-02da-4c77-9667-e605a037f09e</string>
     <string name="hash_place_holder">hash value:</string>
     <string name="email_place_holder">Email:</string>
- </resources>
+    <string name="cracking_the_hash_value">cracking the hash value</string>
+    <string name="cracked_email">"Cracked Email: "</string>
+</resources>

@@ -13,7 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DijitalGarajiHashingTask"
         android:usesCleartextTraffic="true">
-
+        <activity
+            android:name=".view.HashSolvingActivity"
+            android:exported="false" />
         <activity
             android:name=".view.HashRetrievingActivity"
             android:exported="true">

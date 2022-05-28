@@ -1,8 +1,10 @@
 package com.tasks.dijitalgarajihashingtask.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
@@ -16,7 +18,17 @@ import kotlinx.coroutines.flow.collect
 
 @AndroidEntryPoint
 class HashRetrievingActivity : AppCompatActivity() {
+
+    companion object
+    {
+        val EMAIL ="email"
+        val HASHED_VALUE ="hashed_value"
+    }
     lateinit var activityBinding: ActivityHashRetrievingBinding
+    private lateinit var email: String
+    private lateinit var hashedValue: String
+
+
     val hashedValuesViewModel: HashedValuesViewModel by lazy {
         ViewModelProvider(this).get(HashedValuesViewModel::class.java)
     }
@@ -30,6 +42,12 @@ class HashRetrievingActivity : AppCompatActivity() {
         activityBinding.btnGetHashValue.setOnClickListener {
             getTheHashEmail()
 
+        }
+        activityBinding.btnOpenHashSolvingActivity.setOnClickListener {
+            val hashSolvingIntent = Intent(this,HashSolvingActivity::class.java)
+            hashSolvingIntent.putExtra(EMAIL,email)
+            hashSolvingIntent.putExtra(HASHED_VALUE,hashedValue)
+            startActivity(hashSolvingIntent)
         }
     }
 
@@ -53,10 +71,11 @@ class HashRetrievingActivity : AppCompatActivity() {
                     is Resource.Success -> {
                         makeALog("this is Success ${it.data.toString()}")
                         changePreogressBarVisibility(false)
+                        email = it.data?.email!!
+                        hashedValue = it.data?.hash!!
                         activityBinding.txtHashResult.setText("${getStringResourceById(R.string.hash_place_holder)}\n${it.data?.hash}")
                         activityBinding.txtEmailResult.setText("${getStringResourceById(R.string.email_place_holder)} ${it.data?.email}")
-
-
+                        activityBinding.btnOpenHashSolvingActivity.isVisible = true
                     }
                     is Resource.Error -> {
 
@@ -75,11 +94,11 @@ class HashRetrievingActivity : AppCompatActivity() {
         Log.d("TAG121", "makeALog: " + logMsg)
     }
 
-    fun changeButtonVisibility(isVisible: Boolean) {
+    private fun changeButtonVisibility(isVisible: Boolean) {
         activityBinding.btnGetHashValue.isVisible = isVisible
     }
 
-    fun changePreogressBarVisibility(isVisible: Boolean) {
+    private fun changePreogressBarVisibility(isVisible: Boolean) {
         activityBinding.progressLoading.isVisible = isVisible
     }
 
